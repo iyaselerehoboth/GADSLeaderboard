@@ -36,6 +36,6 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(() -> {
             //Navigate to next page.
             startActivity(new Intent(MainActivity.this, Homepage.class));
-        }, 2000);
+        }, 1000);
     }
 }
