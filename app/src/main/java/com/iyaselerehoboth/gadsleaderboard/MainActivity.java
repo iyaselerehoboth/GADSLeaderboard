@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.iyaselerehoboth.gadsleaderboard.databinding.ActivityMainBinding;
+import com.iyaselerehoboth.gadsleaderboard.views.activities.Homepage;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
@@ -28,16 +29,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        nextPage();
+        //nextPage();
     }
 
     public void nextPage() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                //Navigate to next page.
-                startActivity(new Intent(MainActivity.this, Homepage.class));
-            }
+        new Handler().postDelayed(() -> {
+            //Navigate to next page.
+            startActivity(new Intent(MainActivity.this, Homepage.class));
         }, 2000);
     }
 }
