@@ -1,10 +1,16 @@
 package com.iyaselerehoboth.gadsleaderboard.data.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class LearningLeaders {
 
+    @SerializedName("name")
     private String name;
+    @SerializedName("hours")
     private String hours;
+    @SerializedName("country")
     private String country;
+    @SerializedName("badgeUrl")
     private String badgeUrl;
 
     public LearningLeaders(String name, String hours, String country, String badgeUrl) {
