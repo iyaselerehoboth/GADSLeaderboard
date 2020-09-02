@@ -1,7 +1,6 @@
 package com.iyaselerehoboth.gadsleaderboard.views.activities;
 
 import android.os.Bundle;
-import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,10 +24,6 @@ public class Homepage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_homepage);
-
-        // In Activity's onCreate() for instance
-        // To make the notification bar transparent.
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         initTabs();
     }
