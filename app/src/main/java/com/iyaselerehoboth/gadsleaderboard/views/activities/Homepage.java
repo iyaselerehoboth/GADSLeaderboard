@@ -1,5 +1,6 @@
 package com.iyaselerehoboth.gadsleaderboard.views.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -26,6 +27,8 @@ public class Homepage extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_homepage);
 
         initTabs();
+
+        binding.btnSubmit.setOnClickListener(view -> startActivity(new Intent(Homepage.this, SubmissionActivity.class)));
     }
 
     public void initTabs() {
