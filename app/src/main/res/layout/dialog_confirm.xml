@@ -2,10 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -15,18 +11,24 @@
                 android:id="@+id/img_btn_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="25dp"
+                android:background="@android:color/transparent"
                 app:layout_constraintBottom_toTopOf="@+id/mtv_question"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="spread"
-                app:srcCompat="@drawable/ic_baseline_cancel_48" />
+                app:layout_constraintVertical_chainStyle="spread_inside"
+                app:srcCompat="@drawable/ic_custom_close_v2" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/mtv_question"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginEnd="10dp"
+                android:layout_marginBottom="30dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="Are you sure ?"
                 android:textColor="@android:color/black"
@@ -43,6 +45,8 @@
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:text="Yes"
                 android:textAllCaps="false"
                 android:textColor="#F6DF6B"
@@ -54,5 +58,4 @@
                 app:strokeColor="#F6DF6B" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </com.google.android.material.card.MaterialCardView>
 </layout>
