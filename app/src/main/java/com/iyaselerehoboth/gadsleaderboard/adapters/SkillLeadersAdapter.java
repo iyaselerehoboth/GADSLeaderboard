@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.iyaselerehoboth.gadsleaderboard.R;
 import com.iyaselerehoboth.gadsleaderboard.data.models.SkillLeaders;
 import com.iyaselerehoboth.gadsleaderboard.databinding.ItemSkillLeadersLayoutBinding;
 import com.squareup.picasso.Picasso;
@@ -64,7 +65,10 @@ public class SkillLeadersAdapter extends RecyclerView.Adapter<SkillLeadersAdapte
         public void bind(SkillLeaders list) {
             binding.mtvName.setText(list.getName());
             binding.mtvScoreCountry.setText(list.getScore() + " skill IQ Score. " + list.getCountry());
-            Picasso.get().load(Uri.parse(list.getBadgeUrl())).into(binding.imgViewBadge);
+            Picasso.get()
+                    .load(Uri.parse(list.getBadgeUrl()))
+                    .placeholder(R.drawable.ic_loader)
+                    .into(binding.imgViewBadge);
 
             binding.executePendingBindings();
         }

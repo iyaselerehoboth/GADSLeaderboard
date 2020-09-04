@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.iyaselerehoboth.gadsleaderboard.R;
 import com.iyaselerehoboth.gadsleaderboard.data.models.LearningLeaders;
 import com.iyaselerehoboth.gadsleaderboard.databinding.ItemLearningLeadersLayoutBinding;
 import com.squareup.picasso.Picasso;
@@ -65,7 +66,10 @@ public class LearningLeadersAdapter extends RecyclerView.Adapter<LearningLeaders
         public void bind(LearningLeaders list) {
             binding.mtvName.setText(list.getName());
             binding.mtvScoreCountry.setText(list.getHours() + " learning hours, " + list.getCountry());
-            Picasso.get().load(Uri.parse(list.getBadgeUrl())).into(binding.imgViewBadge);
+            Picasso.get()
+                    .load(Uri.parse(list.getBadgeUrl()))
+                    .placeholder(R.drawable.ic_loader)
+                    .into(binding.imgViewBadge);
 
             binding.executePendingBindings();
         }
