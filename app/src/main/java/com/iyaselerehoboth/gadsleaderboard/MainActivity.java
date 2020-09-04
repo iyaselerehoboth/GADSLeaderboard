@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        //nextPage();
+        nextPage();
     }
 
     public void nextPage() {
         new Handler().postDelayed(() -> {
             //Navigate to next page.
             startActivity(new Intent(MainActivity.this, Homepage.class));
-        }, 1000);
+        }, 500);
     }
 }

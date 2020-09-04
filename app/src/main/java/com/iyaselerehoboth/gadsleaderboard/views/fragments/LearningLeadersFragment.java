@@ -48,10 +48,23 @@ public class LearningLeadersFragment extends Fragment {
         return binding.getRoot();
     }
 
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initAdapter();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        binding.shimmerLayout.startShimmer();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        binding.shimmerLayout.stopShimmer();
     }
 
     public void initAdapter() {
@@ -61,6 +74,10 @@ public class LearningLeadersFragment extends Fragment {
             public void onResponse(Call<List<LearningLeaders>> call, Response<List<LearningLeaders>> response) {
                 if (response.isSuccessful()) {
                     List<LearningLeaders> res = response.body();
+
+                    binding.shimmerLayout.stopShimmer();
+                    binding.shimmerLayout.setVisibility(View.GONE);
+                    binding.rcvLearningLeaders.setVisibility(View.VISIBLE);
 
                     adapter = new LearningLeadersAdapter(getActivity(), res, leader -> {
                         //Do Nothing
@@ -72,7 +89,7 @@ public class LearningLeadersFragment extends Fragment {
 
             @Override
             public void onFailure(Call<List<LearningLeaders>> call, Throwable t) {
-
+                binding.shimmerLayout.stopShimmer();
             }
         });
     }

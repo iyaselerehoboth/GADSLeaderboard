@@ -54,6 +54,18 @@ public class SkillLeadersFragment extends Fragment {
         initAdapter();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        binding.shimmerLayout.startShimmer();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        binding.shimmerLayout.stopShimmer();
+    }
+
     public void initAdapter() {
         Call<List<SkillLeaders>> call = service.getSkillLeaders();
         call.enqueue(new Callback<List<SkillLeaders>>() {
@@ -61,6 +73,10 @@ public class SkillLeadersFragment extends Fragment {
             public void onResponse(Call<List<SkillLeaders>> call, Response<List<SkillLeaders>> response) {
                 if (response.isSuccessful()) {
                     List<SkillLeaders> res = response.body();
+
+                    binding.shimmerLayout.stopShimmer();
+                    binding.shimmerLayout.setVisibility(View.GONE);
+                    binding.rcvSkillLeaders.setVisibility(View.VISIBLE);
 
                     adapter = new SkillLeadersAdapter(getActivity(), res, leader -> {
                         //Do Nothing.
@@ -72,7 +88,7 @@ public class SkillLeadersFragment extends Fragment {
 
             @Override
             public void onFailure(Call<List<SkillLeaders>> call, Throwable t) {
-
+                binding.shimmerLayout.stopShimmer();
             }
         });
     }
