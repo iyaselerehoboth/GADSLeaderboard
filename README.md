@@ -8,8 +8,15 @@ Android mobile application developed as a practise project in the [GADS2020](htt
 ---
 
 ![Main Header](/screenshots/gads.png)
-![Image-1](/screenshots/1.jpg) | ![Image-2](/screenshots/2.jpg) | ![Image-3](/screenshots/3.jpg)
-![Image-4](/screenshots/4.jpg) | ![Image-5](/screenshots/5.jpg) | ![Image-6](/screenshots/6.jpg)
+
+<p align="middle">
+  <img src="/screenshots/1.jpg" width="100" />
+  <img src="/screenshots/2.jpg" width="100" /> 
+  <img src="/screenshots/3.jpg" width="100" />
+</p>
+
+![Image-1](/screenshots/1.jpg)  ![Image-2](/screenshots/2.jpg)  ![Image-3](/screenshots/3.jpg)
+![Image-4](/screenshots/4.jpg)  ![Image-5](/screenshots/5.jpg)  ![Image-6](/screenshots/6.jpg)
 ![Image-7](/screenshots/7.jpg)
 
 
