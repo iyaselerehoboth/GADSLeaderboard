@@ -86,11 +86,11 @@ public class SubmissionActivity extends AppCompatActivity {
                     //Display Success dialog
                     successDialog();
                     clearInputs();
-                    Toast.makeText(SubmissionActivity.this, "Response Code: " + response.code(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(SubmissionActivity.this, "Response Code: " + response.code(), Toast.LENGTH_LONG).show();
 
                 } else {
                     failedDialog();
-                    Toast.makeText(SubmissionActivity.this, "Response Code: " + response.code(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(SubmissionActivity.this, "Response Code: " + response.code(), Toast.LENGTH_LONG).show();
                 }
             }
 
