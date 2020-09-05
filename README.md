@@ -29,8 +29,6 @@ Clone this repository and install into Android Studio
 git clone https://github.com/iyaselerehoboth/GADSLeaderboard.git
 ```
 
-
-
 ### Maintainers
 ---
 This project is maintained by 
